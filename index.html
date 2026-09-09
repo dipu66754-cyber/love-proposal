@@ -28,7 +28,10 @@ body{
     color:white;
 }
 
-/* BACKGROUND GLOW */
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
 .glow{
     position:fixed;
     width:350px;
@@ -38,18 +41,23 @@ body{
     opacity:.35;
     pointer-events:none;
 }
+
 .glow.one{
     background:#ff2f92;
     top:-120px;
     left:-100px;
 }
+
 .glow.two{
     background:#7d4dff;
     bottom:-120px;
     right:-100px;
 }
 
-/* SCREEN */
+/* =========================
+   SCREEN
+========================= */
+
 .screen{
     position:absolute;
     inset:0;
@@ -62,21 +70,30 @@ body{
     transition:all .8s ease;
 }
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
+
 .card{
     width:min(600px,95vw);
     max-height:90vh;
     overflow:auto;
     padding:45px 30px;
     text-align:center;
+
     border:1px solid rgba(255,255,255,.18);
+
     background:rgba(255,255,255,.08);
+
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
+
     border-radius:30px;
+
     box-shadow:
         0 25px 80px rgba(0,0,0,.45),
         inset 0 0 30px rgba(255,255,255,.04);
+
     animation:cardIn 1s ease;
 }
 
@@ -85,13 +102,17 @@ body{
         opacity:0;
         transform:translateY(40px) scale(.9);
     }
+
     to{
         opacity:1;
         transform:translateY(0) scale(1);
     }
 }
 
-/* HEART */
+/* =========================
+   HEART
+========================= */
+
 .heart{
     font-size:70px;
     animation:heartbeat 1.3s infinite;
@@ -100,16 +121,31 @@ body{
 }
 
 @keyframes heartbeat{
-    0%,100%{ transform:scale(1); }
-    50%{ transform:scale(1.18); }
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
 }
 
-/* TEXT */
+/* =========================
+   TEXT
+========================= */
+
 h1{
     font-size:clamp(30px,7vw,58px);
     line-height:1.1;
     margin-bottom:18px;
-    background:linear-gradient(90deg, #fff, #ff9fc9, #fff);
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ff9fc9,
+        #fff
+    );
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -120,7 +156,10 @@ h1{
     margin-bottom:32px;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
+
 .buttons{
     display:flex;
     justify-content:center;
@@ -133,17 +172,30 @@ button{
     border:none;
     cursor:pointer;
     color:white;
+
     font-size:18px;
     font-weight:bold;
+
     padding:15px 38px;
+
     border-radius:50px;
-    transition: transform .25s ease, box-shadow .25s ease;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
     min-width:140px;
+
     -webkit-tap-highlight-color:transparent;
 }
 
 .yes{
-    background:linear-gradient(135deg, #ff3d8d, #ff0066);
+    background:linear-gradient(
+        135deg,
+        #ff3d8d,
+        #ff0066
+    );
+
     box-shadow:0 10px 30px #ff006655;
 }
 
@@ -152,335 +204,1094 @@ button{
     border:1px solid rgba(255,255,255,.25);
 }
 
-button:hover{ transform:translateY(-5px) scale(1.04); }
-button:active{ transform:scale(.95); }
+button:hover{
+    transform:translateY(-5px) scale(1.04);
+}
 
-/* SAD SCREEN */
-#sadScreen{ display:none; }
+button:active{
+    transform:scale(.95);
+}
+
+/* =========================
+   SAD SCREEN
+========================= */
+
+#sadScreen{
+    display:none;
+}
+
 .sadEmoji{
     font-size:75px;
     margin-bottom:20px;
+
     animation:sadShake 2s infinite;
 }
 
 @keyframes sadShake{
-    0%,100%{ transform:rotate(0); }
-    50%{ transform:rotate(-8deg); }
+    0%,100%{
+        transform:rotate(0);
+    }
+
+    50%{
+        transform:rotate(-8deg);
+    }
 }
 
-.sadText{ font-size:24px; margin-bottom:10px; }
-.sadSmall{ color:#d8b9cf; margin-bottom:28px; }
+.sadText{
+    font-size:24px;
+    margin-bottom:10px;
+}
 
-/* LOVE SCREEN */
+.sadSmall{
+    color:#d8b9cf;
+    margin-bottom:28px;
+}
+
+/* =========================
+   LOVE SCREEN
+========================= */
+
 #loveScreen{
     display:none;
-    background:radial-gradient(circle, #3c002f, #120014 70%);
+
+    background:
+        radial-gradient(
+            circle,
+            #3c002f,
+            #120014 70%
+        );
 }
 
 .loveTitle{
     font-size:clamp(38px,9vw,80px);
+
     font-weight:900;
-    text-shadow: 0 0 15px #ff4b9d, 0 0 40px #ff0077, 0 0 80px #ff0077;
+
+    text-shadow:
+        0 0 15px #ff4b9d,
+        0 0 40px #ff0077,
+        0 0 80px #ff0077;
+
     animation:lovePulse 1.4s infinite;
 }
 
 @keyframes lovePulse{
-    0%,100%{ transform:scale(1); }
-    50%{ transform:scale(1.06); }
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
 }
 
-/* PROPOSAL */
+/* =========================
+   PROPOSAL
+========================= */
+
 #proposal{
     display:none;
+
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     justify-content:center;
     align-items:center;
+
     padding:20px;
+
     z-index:20;
+
     overflow-y:auto;
 }
 
 .proposalCard{
     width:min(650px,95vw);
+
     max-height:90vh;
+
     overflow-y:auto;
+
     text-align:center;
+
     padding:42px 28px;
+
     border-radius:32px;
+
     background:rgba(255,255,255,.10);
+
     border:1px solid rgba(255,255,255,.25);
+
     backdrop-filter:blur(25px);
     -webkit-backdrop-filter:blur(25px);
-    box-shadow:0 30px 100px rgba(0,0,0,.55);
-    animation:proposalIn 1.2s cubic-bezier(.17,.67,.3,1.3);
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.55);
+
+    animation:
+        proposalIn
+        1.2s
+        cubic-bezier(.17,.67,.3,1.3);
 }
 
 @keyframes proposalIn{
-    from{ opacity:0; transform:scale(.4) rotate(-5deg); }
-    to{ opacity:1; transform:scale(1) rotate(0); }
+    from{
+        opacity:0;
+        transform:
+            scale(.4)
+            rotate(-5deg);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            scale(1)
+            rotate(0);
+    }
 }
 
 .ring{
     font-size:75px;
+
     margin-bottom:15px;
-    animation:ringFloat 2s infinite ease-in-out;
+
+    animation:
+        ringFloat
+        2s
+        infinite
+        ease-in-out;
 }
 
 @keyframes ringFloat{
-    0%,100%{ transform:translateY(0) rotate(-5deg); }
-    50%{ transform:translateY(-12px) rotate(5deg); }
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50%{
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
 }
 
 .proposalCard h2{
     font-size:clamp(30px,7vw,52px);
+
     margin-bottom:20px;
+
     color:#ffb4d7;
 }
 
 .proposalCard p{
     color:#f4dce9;
+
     line-height:1.8;
+
     font-size:17px;
 }
 
 .signature{
     margin-top:25px;
+
     font-size:22px;
+
     color:#fff;
 }
 
-/* RAIN & FLOATING HEARTS */
+/* =========================
+   LOVE RAIN
+========================= */
+
 .rainItem{
     position:fixed;
+
     top:-100px;
     left:0;
+
     font-weight:800;
+
     color:#fff;
-    text-shadow:0 0 8px #ff4d9d, 0 0 20px #ff0080;
+
+    text-shadow:
+        0 0 8px #ff4d9d,
+        0 0 20px #ff0080;
+
     pointer-events:none;
+
     white-space:nowrap;
+
     z-index:50;
-    animation:rainFall linear forwards;
+
+    animation:
+        rainFall
+        linear
+        forwards;
 }
 
 @keyframes rainFall{
-    to{ transform:translateY(115vh) rotate(12deg); opacity:.1; }
+    to{
+        transform:
+            translateY(115vh)
+            rotate(12deg);
+
+        opacity:.1;
+    }
 }
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .floatHeart{
     position:fixed;
+
     bottom:-50px;
+
     font-size:20px;
+
     pointer-events:none;
-    animation:floatUp linear forwards;
+
+    animation:
+        floatUp
+        linear
+        forwards;
+
     opacity:.8;
+
     z-index:5;
 }
 
 @keyframes floatUp{
-    to{ transform:translateY(-115vh) rotate(360deg); opacity:0; }
+    to{
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity:0;
+    }
 }
 
-/* CREDIT */
+/* =========================
+   MADE BY DIPU
+========================= */
+
 .credit{
     position:fixed;
-    bottom:max(10px, env(safe-area-inset-bottom));
-    left:50%;
-    transform:translateX(-50%);
-    z-index:999;
-    width:100%;
-    text-align:center;
-    font-size:13px;
-    color:rgba(255,255,255,.65);
-    letter-spacing:1.5px;
-    pointer-events:none;
-    text-shadow:0 0 8px rgba(255,0,120,.5);
-}
-.credit span{ color:#ff9fc9; font-weight:bold; }
 
-/* MOBILE RESPONSIVE */
+    bottom:
+        max(10px, env(safe-area-inset-bottom));
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:999;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:13px;
+
+    color:rgba(255,255,255,.65);
+
+    letter-spacing:1.5px;
+
+    pointer-events:none;
+
+    text-shadow:
+        0 0 8px rgba(255,0,120,.5);
+}
+
+.credit span{
+    color:#ff9fc9;
+
+    font-weight:bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
-    .card, .proposalCard{ width:100%; max-width:420px; max-height:82vh; padding:30px 18px; border-radius:24px; }
-    .heart, .ring{ font-size:55px; margin-bottom:14px; }
-    h1, .proposalCard h2{ font-size:clamp(27px,8vw,42px); }
-    .buttons{ flex-direction:column; gap:12px; }
-    button{ width:100%; max-width:280px; padding:14px 20px; font-size:16px; }
-    .loveTitle{ font-size:clamp(35px,10vw,60px); }
+
+    html,body{
+        width:100%;
+        height:100%;
+    }
+
+    .screen{
+        padding:
+            15px
+            15px
+            50px
+            15px;
+
+        align-items:center;
+    }
+
+    .card{
+        width:100%;
+
+        max-width:420px;
+
+        max-height:82vh;
+
+        padding:
+            30px
+            18px;
+
+        border-radius:24px;
+    }
+
+    .heart{
+        font-size:55px;
+
+        margin-bottom:14px;
+    }
+
+    h1{
+        font-size:
+            clamp(
+                30px,
+                9vw,
+                45px
+            );
+
+        margin-bottom:14px;
+    }
+
+    .subtitle{
+        font-size:14px;
+
+        line-height:1.6;
+
+        margin-bottom:24px;
+    }
+
+    .buttons{
+        width:100%;
+
+        flex-direction:column;
+
+        gap:12px;
+    }
+
+    button{
+        width:100%;
+
+        min-width:0;
+
+        max-width:280px;
+
+        padding:
+            14px
+            20px;
+
+        font-size:16px;
+    }
+
+    .sadEmoji{
+        font-size:60px;
+
+        margin-bottom:14px;
+    }
+
+    .sadText{
+        font-size:20px;
+
+        line-height:1.5;
+    }
+
+    .sadSmall{
+        font-size:14px;
+
+        line-height:1.6;
+
+        margin-bottom:22px;
+    }
+
+    #loveScreen{
+        padding:20px;
+    }
+
+    .loveTitle{
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                65px
+            );
+
+        line-height:1.15;
+    }
+
+    #loveScreen p{
+        font-size:15px !important;
+
+        line-height:1.6;
+    }
+
+    #proposal{
+        padding:
+            15px
+            15px
+            55px
+            15px;
+
+        align-items:center;
+    }
+
+    .proposalCard{
+        width:100%;
+
+        max-width:430px;
+
+        max-height:82vh;
+
+        padding:
+            28px
+            18px;
+
+        border-radius:25px;
+    }
+
+    .ring{
+        font-size:55px;
+
+        margin-bottom:10px;
+    }
+
+    .proposalCard h2{
+        font-size:
+            clamp(
+                27px,
+                8vw,
+                40px
+            );
+
+        line-height:1.15;
+
+        margin-bottom:16px;
+    }
+
+    .proposalCard p{
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+    .signature{
+        font-size:18px;
+
+        margin-top:20px;
+    }
+
+    .credit{
+        font-size:11px;
+
+        letter-spacing:1px;
+
+        bottom:7px;
+    }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media(max-height:650px) and (max-width:600px){
+
+    .card{
+        max-height:78vh;
+
+        padding:
+            22px
+            16px;
+    }
+
+    .heart{
+        font-size:45px;
+
+        margin-bottom:8px;
+    }
+
+    h1{
+        font-size:30px;
+
+        margin-bottom:10px;
+    }
+
+    .subtitle{
+        margin-bottom:18px;
+    }
+
+    button{
+        padding:11px 18px;
+    }
+
+    .proposalCard{
+        max-height:78vh;
+
+        padding:
+            22px
+            16px;
+    }
+
+    .ring{
+        font-size:45px;
+    }
+
+    .proposalCard p{
+        font-size:13px;
+
+        line-height:1.55;
+    }
+}
+
+/* =========================
+   LANDSCAPE PHONE
+========================= */
+
+@media(max-width:850px) and (orientation:landscape){
+
+    .screen{
+        padding:10px 20px 40px;
+    }
+
+    .card{
+        max-height:88vh;
+
+        padding:20px;
+    }
+
+    .heart{
+        font-size:45px;
+
+        margin-bottom:8px;
+    }
+
+    h1{
+        font-size:32px;
+
+        margin-bottom:8px;
+    }
+
+    .subtitle{
+        margin-bottom:15px;
+    }
+
+    .buttons{
+        flex-direction:row;
+    }
+
+    button{
+        width:auto;
+
+        max-width:none;
+
+        padding:10px 25px;
+    }
+
+    .proposalCard{
+        max-height:88vh;
+
+        padding:22px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO PLAYER FOR MYLOVE.MP3 -->
-<audio id="bgMusic" loop preload="auto" playsinline>
-    <source src="mylove.mp3" type="audio/mpeg">
-</audio>
+<!-- AUDIO PLAYER -->
+<audio id="bgMusic" src="mylove.mp3" preload="auto"></audio>
+
+<!-- BACKGROUND GLOW -->
 
 <div class="glow one"></div>
 <div class="glow two"></div>
 
-<!-- QUESTION SCREEN -->
-<section class="screen" id="questionScreen">
-    <div class="card">
-        <div class="heart">❤️</div>
-        <h1>Do You Love Me?</h1>
-        <p class="subtitle">I have one little question for you... 🥺✨</p>
-        <div class="buttons">
-            <button class="yes" onclick="sayYes()">Yes ❤️</button>
-            <button class="no" onclick="sayNo()">No 🥺</button>
-        </div>
-    </div>
-</section>
 
-<!-- NO SCREEN -->
-<section class="screen" id="sadScreen">
-    <div class="card">
-        <div class="sadEmoji">🥺💔</div>
-        <h1>Are You Sure?</h1>
-        <p class="sadText">My little heart just broke... 💔</p>
-        <p class="sadSmall">Maybe give me one more chance? 🥹</p>
-        <div class="buttons">
-            <button class="yes" onclick="sayYes()">Yes ❤️</button>
-            <button class="no" onclick="sayNoAgain()">Still No 😭</button>
-        </div>
-    </div>
-</section>
+<!-- =========================
+     QUESTION SCREEN
+========================= -->
 
-<!-- LOVE SCREEN -->
-<section class="screen" id="loveScreen">
-    <div style="text-align:center; z-index:10; width:100%;">
-        <div class="loveTitle">I LOVE YOU S❤️</div>
-        <p style="margin-top:20px; color:#ffd9e9; font-size:18px;">
-            You just made my heart the happiest place in the world. ✨
+<section
+    class="screen"
+    id="questionScreen"
+>
+
+    <div class="card">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1>
+            Do You Love Me?
+        </h1>
+
+        <p class="subtitle">
+            I have one little question for you... 🥺✨
         </p>
+
+        <div class="buttons">
+
+            <button
+                class="yes"
+                onclick="sayYes()"
+            >
+                Yes ❤️
+            </button>
+
+            <button
+                class="no"
+                onclick="sayNo()"
+            >
+                No 🥺
+            </button>
+
+        </div>
+
     </div>
+
 </section>
 
-<!-- PROPOSAL -->
+
+<!-- =========================
+     NO SCREEN
+========================= -->
+
+<section
+    class="screen"
+    id="sadScreen"
+>
+
+    <div class="card">
+
+        <div class="sadEmoji">
+            🥺💔
+        </div>
+
+        <h1>
+            Are You Sure?
+        </h1>
+
+        <p class="sadText">
+            My little heart just broke... 💔
+        </p>
+
+        <p class="sadSmall">
+            Maybe give me one more chance? 🥹
+        </p>
+
+        <div class="buttons">
+
+            <button
+                class="yes"
+                onclick="sayYes()"
+            >
+                Yes ❤️
+            </button>
+
+            <button
+                class="no"
+                onclick="sayNoAgain()"
+            >
+                Still No 😭
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE SCREEN
+========================= -->
+
+<section
+    class="screen"
+    id="loveScreen"
+>
+
+    <div
+        style="
+            text-align:center;
+            z-index:10;
+            width:100%;
+        "
+    >
+
+        <div class="loveTitle">
+            I LOVE YOU S❤️
+        </div>
+
+        <p
+            style="
+                margin-top:20px;
+                color:#ffd9e9;
+                font-size:18px;
+            "
+        >
+            You just made my heart
+            the happiest place in the world. ✨
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROPOSAL
+========================= -->
+
 <section id="proposal">
+
     <div class="proposalCard">
-        <div class="ring">💖S💖</div>
-        <h2>One Little Promise...</h2>
+
+        <div class="ring">
+            💖S💖
+        </div>
+
+        <h2>
+            One Little Promise...
+        </h2>
+
         <p>
-            If my heart had a favorite place, it would always be somewhere close to you. ❤️
+
+            If my heart had a favorite place,
+            it would always be somewhere close to you. ❤️
+
             <br><br>
-            I don't promise that every day will be perfect, but I promise to make the ordinary days feel special. To laugh with you, support you, annoy you a little, and stand beside you through every beautiful chapter. ✨
+
+            I don't promise that every day
+            will be perfect,
+            but I promise to make the ordinary
+            days feel special.
+
+            To laugh with you,
+            support you,
+            annoy you a little,
+            and stand beside you through every
+            beautiful chapter. ✨
+
             <br><br>
-            So today, I have only one question...
+
+            So today,
+            I have only one question...
+
             <br><br>
-            <strong>Will you let me be the person who keeps choosing you, again and again? ❤️</strong>
+
+            <strong>
+                Will you let me be the person
+                who keeps choosing you,
+                again and again? ❤️
+            </strong>
+
         </p>
-        <div class="signature">With all my heart, S ❤️</div>
+
+        <div class="signature">
+            With all my heart, S ❤️
+        </div>
+
     </div>
+
 </section>
 
-<div class="credit">Made By <span>DIPU ❤️</span></div>
+
+<!-- =========================
+     CREDIT
+========================= -->
+
+<div class="credit">
+    Made By <span>DIPU ❤️</span>
+</div>
+
 
 <script>
-function playAudio() {
-    const music = document.getElementById("bgMusic");
-    if (music) {
-        music.volume = 1.0;
-        let playPromise = music.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(error => {
-                console.log("Autoplay blocked, waiting for user click.");
-                // মোবাইলের ব্রাউজার সাউন্ড ব্লক করলে পরের যে কোনো ক্লিকে মিউজিক অন হয়ে যাবে
-                document.body.addEventListener('click', function() {
-                    music.play();
-                }, { once: true });
-            });
-        }
-    }
-}
+
+/* =========================
+   NO BUTTON
+========================= */
 
 function sayNo(){
-    document.getElementById("questionScreen").style.display="none";
-    document.getElementById("sadScreen").style.display="flex";
+
+    document
+        .getElementById("questionScreen")
+        .style.display="none";
+
+    document
+        .getElementById("sadScreen")
+        .style.display="flex";
+
     createHearts(15);
 }
 
-function sayNoAgain(){
-    const card = document.querySelector("#sadScreen .card");
-    card.animate([
-        { transform:"translateX(0)" },
-        { transform:"translateX(-10px)" },
-        { transform:"translateX(10px)" },
-        { transform:"translateX(-6px)" },
-        { transform:"translateX(0)" }
-    ], { duration:500 });
 
-    const text = document.querySelector(".sadText");
-    text.innerHTML = "Okay... I'll wait right here 🥺❤️";
-    setTimeout(()=>{ text.innerHTML = "But my heart still says YES for you. 💗"; },1800);
+/* =========================
+   STILL NO
+========================= */
+
+function sayNoAgain(){
+
+    const card =
+        document.querySelector(
+            "#sadScreen .card"
+        );
+
+    card.animate(
+        [
+            {
+                transform:"translateX(0)"
+            },
+            {
+                transform:"translateX(-10px)"
+            },
+            {
+                transform:"translateX(10px)"
+            },
+            {
+                transform:"translateX(-6px)"
+            },
+            {
+                transform:"translateX(0)"
+            }
+        ],
+        {
+            duration:500
+        }
+    );
+
+    const text =
+        document.querySelector(
+            ".sadText"
+        );
+
+    text.innerHTML =
+        "Okay... I'll wait right here 🥺❤️";
+
+    setTimeout(()=>{
+
+        text.innerHTML =
+            "But my heart still says YES for you. 💗";
+
+    },1800);
 }
 
+
+/* =========================
+   YES BUTTON
+========================= */
+
 function sayYes(){
-    playAudio();
 
-    document.getElementById("questionScreen").style.display="none";
-    document.getElementById("sadScreen").style.display="none";
+    // Music Play Setup
+    const music = document.getElementById("bgMusic");
+    if(music){
+        music.play().catch(error => console.log("Audio play failed:", error));
+    }
 
-    const love = document.getElementById("loveScreen");
+    document
+        .getElementById("questionScreen")
+        .style.display="none";
+
+    document
+        .getElementById("sadScreen")
+        .style.display="none";
+
+    const love =
+        document.getElementById(
+            "loveScreen"
+        );
+
     love.style.display="flex";
 
     startLoveRain();
+
     createHearts(40);
 
     setTimeout(()=>{
+
         love.style.display="none";
-        document.getElementById("proposal").style.display="flex";
+
+        document
+            .getElementById("proposal")
+            .style.display="flex";
+
         createHearts(70);
+
     },6500);
 }
 
+
+/* =========================
+   LOVE RAIN
+========================= */
+
 function startLoveRain(){
+
     let count=0;
-    const interval = setInterval(()=>{
-        for(let i=0;i<4;i++){
-            const item = document.createElement("div");
-            item.className= "rainItem";
-            item.innerHTML= "I LOVE YOU S❤️";
-            item.style.left= Math.random()*100+"vw";
-            item.style.fontSize= (15+ Math.random()*25)+"px";
-            item.style.animationDuration= (3+ Math.random()*3)+"s";
-            document.body.appendChild(item);
-            setTimeout(()=>{ item.remove(); },6500);
-        }
-        count++;
-        if(count>45){ clearInterval(interval); }
-    },130);
+
+    const interval =
+        setInterval(()=>{
+
+            for(let i=0;i<4;i++){
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className=
+                    "rainItem";
+
+                item.innerHTML=
+                    "I LOVE YOU S❤️";
+
+                item.style.left=
+                    Math.random()*100+"vw";
+
+                item.style.fontSize=
+                    (15+
+                    Math.random()*25)+"px";
+
+                item.style.animationDuration=
+                    (3+
+                    Math.random()*3)+"s";
+
+                document.body
+                    .appendChild(item);
+
+                setTimeout(()=>{
+
+                    item.remove();
+
+                },6500);
+            }
+
+            count++;
+
+            if(count>45){
+
+                clearInterval(
+                    interval
+                );
+
+            }
+
+        },130);
 }
 
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
 function createHearts(amount){
+
     for(let i=0;i<amount;i++){
+
         setTimeout(()=>{
-            const heart = document.createElement("div");
-            heart.className= "floatHeart";
-            const hearts=["❤️","💗","💖","💕","💘","✨","💓"];
-            heart.innerHTML= hearts[Math.floor(Math.random()*hearts.length)];
-            heart.style.left= Math.random()*100+"vw";
-            heart.style.fontSize= (15+ Math.random()*30)+"px";
-            heart.style.animationDuration= (4+ Math.random()*5)+"s";
-            document.body.appendChild(heart);
-            setTimeout(()=>{ heart.remove(); },9000);
+
+            const heart =
+                document.createElement(
+                    "div"
+                );
+
+            heart.className=
+                "floatHeart";
+
+            const hearts=[
+                "❤️",
+                "💗",
+                "💖",
+                "💕",
+                "💘",
+                "✨",
+                "💓"
+            ];
+
+            heart.innerHTML=
+                hearts[
+                    Math.floor(
+                        Math.random()*
+                        hearts.length
+                    )
+                ];
+
+            heart.style.left=
+                Math.random()*100+"vw";
+
+            heart.style.fontSize=
+                (15+
+                Math.random()*30)+"px";
+
+            heart.style.animationDuration=
+                (4+
+                Math.random()*5)+"s";
+
+            document.body
+                .appendChild(heart);
+
+            setTimeout(()=>{
+
+                heart.remove();
+
+            },9000);
+
         },i*80);
     }
 }
 
+
+/* =========================
+   CONTINUOUS HEARTS
+========================= */
+
 setInterval(()=>{
-    const heart = document.createElement("div");
-    heart.className= "floatHeart";
-    heart.innerHTML= Math.random()>.5 ? "❤️" : "💗";
-    heart.style.left= Math.random()*100+"vw";
-    heart.style.animationDuration= (5+ Math.random()*5)+"s";
-    document.body.appendChild(heart);
-    setTimeout(()=>{ heart.remove(); },10000);
+
+    const heart =
+        document.createElement(
+            "div"
+        );
+
+    heart.className=
+        "floatHeart";
+
+    heart.innerHTML=
+        Math.random()>.5
+        ? "❤️"
+        : "💗";
+
+    heart.style.left=
+        Math.random()*100+"vw";
+
+    heart.style.animationDuration=
+        (5+
+        Math.random()*5)+"s";
+
+    document.body
+        .appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },10000);
+
 },700);
+
 </script>
 
 </body>
