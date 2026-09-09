@@ -1,5 +1,3 @@
-<a:application id="app">
-  <a:file path="index.html">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -812,9 +810,9 @@ button:active{
 
 <body>
 
-<!-- AUDIO PLAYER FOR "Zara Sa / Fida Hu Tujhpe Meri Jaan Bepanah" -->
+<!-- AUDIO PLAYER USING LOCAL GITHUB FILE -->
 <audio id="bgMusic" loop preload="auto">
-    <source src="https://cdnsongs.com/music/data/Bollywood/200804/Jannat/128/Zara_Sa.mp3" type="audio/mpeg">
+    <source src="mylove.mp3" type="audio/mpeg">
 </audio>
 
 <!-- BACKGROUND GLOW -->
@@ -1100,7 +1098,7 @@ function sayNoAgain(){
 
 function sayYes(){
 
-    /* 🎵 Play "Zara Sa / Fida Hu Tujhpe" Song */
+    /* 🎵 Play "mylove.mp3" Song */
     const music = document.getElementById("bgMusic");
     if(music){
         music.play().catch(error => {
@@ -1302,5 +1300,3 @@ setInterval(()=>{
 
 </body>
 </html>
-  </a:file>
-</a:application>
